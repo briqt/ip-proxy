@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ip-proxy config",
+  "type": "object",
+  "required": [
+    "providers"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "default_provider": {
+      "type": "string",
+      "description": "未传 --provider 时使用的服务商名；只有一家时可留空"
+    },
+    "disable_update_check": {
+      "type": "boolean",
+      "description": "true 时不做自动更新检查，也不显示缓存中的提示"
+    },
+    "providers": {
+      "type": "object",
+      "description": "服务商表，键为服务商名（须是 proxy.py 支持的名称，如 hproxy）",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "api_key"
+        ],
+        "properties": {
+          "api_key": {
+            "type": "string",
+            "description": "服务商 API 密钥。只写在本文件（权限 600），不放命令行或环境变量"
+          },
+          "api_base": {
+            "type": "string",
+            "description": "API 根地址；留空用脚本内置默认值"
+          },
+          "plan_id": {
+            "type": "string",
+            "description": "固定使用的套餐 ID；留空则自动选唯一的可用套餐"
+          },
+          "default_country": {
+            "type": "string",
+            "description": "未传 --country 时的出口国家（两位国家码）；留空为不限国家"
+          }
+        }
+      }
+    }
+  }
+}

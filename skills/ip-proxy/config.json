@@ -1,0 +1,12 @@
+{
+  "default_provider": "hproxy",
+  "disable_update_check": false,
+  "providers": {
+    "hproxy": {
+      "api_key": "",
+      "api_base": "https://hproxy.com/api/v1",
+      "plan_id": "",
+      "default_country": ""
+    }
+  }
+}
