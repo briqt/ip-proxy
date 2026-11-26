@@ -6,7 +6,9 @@
       "api_key": "",
       "api_base": "https://hproxy.com/api/v1",
       "plan_id": "",
-      "default_country": ""
+      "default_country": "",
+      "default_sticky": 0,
+      "default_protocol": "http"
     }
   }
 }

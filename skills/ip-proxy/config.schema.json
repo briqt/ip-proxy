@@ -38,7 +38,21 @@
           },
           "default_country": {
             "type": "string",
-            "description": "未传 --country 时的出口国家（两位国家码）；留空为不限国家"
+            "description": "未传 --country 时的出口国家（两位国家码）；留空为不限国家，命令行传 --country any 可单次放开"
+          },
+          "default_sticky": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "未传 --sticky 时的固定会话分钟数；0 或省略为轮换，命令行传 --sticky 0 可单次切回轮换"
+          },
+          "default_protocol": {
+            "type": "string",
+            "enum": [
+              "",
+              "http",
+              "socks5"
+            ],
+            "description": "未传 --protocol 时的代理协议（http 或 socks5）；留空默认 http"
           }
         }
       }
